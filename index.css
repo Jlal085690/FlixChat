@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 25% 14%;
+  --foreground: 0 0% 100%;
+  --muted: 215 18% 24%;
+  --muted-foreground: 215 16% 60%;
+  --popover: 220 23% 23%;
+  --popover-foreground: 0 0% 100%;
+  --card: 220 23% 23%;
+  --card-foreground: 0 0% 100%;
+  --border: 215 18% 24%;
+  --input: 215 18% 24%;
+  --primary: 210 40% 32%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 207 90% 54%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 215 18% 24%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 207 90% 54%;
+  --radius: 0.5rem;
+
+  --chart-1: 207 90% 54%;
+  --chart-2: 210 40% 32%;
+  --chart-3: 0 84% 60%;
+  --chart-4: 152 75% 40%;
+  --chart-5: 278 75% 42%;
+
+  --sidebar-background: 223 30% 15%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 210 40% 32%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 207 90% 54%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 220 15% 20%;
+  --sidebar-ring: 207 90% 54%;
+}
+
+.dark {
+  --background: 220 25% 14%;
+  --foreground: 0 0% 100%;
+  --muted: 215 18% 24%;
+  --muted-foreground: 215 16% 60%;
+  --popover: 220 23% 23%;
+  --popover-foreground: 0 0% 100%;
+  --card: 220 23% 23%;
+  --card-foreground: 0 0% 100%;
+  --border: 215 18% 24%;
+  --input: 215 18% 24%;
+  --primary: 210 40% 32%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 207 90% 54%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 215 18% 24%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 207 90% 54%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-cairo bg-background text-foreground;
+    direction: rtl;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .chat-message-sent {
+    @apply bg-secondary text-secondary-foreground self-start rounded-xl rounded-tr-none;
+  }
+
+  .chat-message-received {
+    @apply bg-card text-card-foreground self-end rounded-xl rounded-tl-none;
+  }
+
+  .story-circle {
+    @apply border-2 border-secondary;
+  }
+
+  .story-circle.viewed {
+    @apply border-muted-foreground;
+  }
+
+  .drawer-transition {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
